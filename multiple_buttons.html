@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Buttons DOM Exercise</title>
+</head>
+
+<body id="id1">
+    <button class="btn_onclick" type="button" onclick="changeColors()">Button 1</button>
+    <button class="btn_onclick" type="button" onclick="changeColors()">Button 2</button>
+    <button class="btn_onclick" type="button" onclick="changeColors()">Button
+        3</button>
+
+    <button id="myButton">click to alert</button>
+
+    <script>
+
+        const things = document.querySelectorAll("btn_onclick");
+
+        myButton.addEventListener('click', () => {
+            alert('Button click');
+        });
+
+        function random(number) {
+            return Math.floor(Math.random() * number);
+        }
+
+        function changeColors() {
+            const button = document.querySelector('.btn_onclick');
+            const newColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+
+            document.body.style.background = newColor;
+            button.style.color = newColor;
+        }
+
+        // Assuming you have an HTML button with class 'btn_onclick'
+        const myButton = document.querySelector('.btn_onclick');
+        myButton.addEventListener('click', changeColors);
+
+    </script>
+</body>
+
+</html>
